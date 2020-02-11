@@ -1,6 +1,4 @@
-﻿using PublicLibrary.lip;
-using PublicLibrary.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PublicLibrary
+namespace PublicLibrary.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Welcome.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Welcome : Page
     {
-        public static string path = @"C:\Temp\MyData.db";
-        public static User user = null;
-
-        private DBcontext db = new DBcontext(path);
-     
-        public MainWindow()
+        public Welcome()
         {
             InitializeComponent();
-
-            MainFrame.Navigate(new PageAuth());
         }
-
     }
 }

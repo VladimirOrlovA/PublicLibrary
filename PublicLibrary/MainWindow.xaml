@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PublicLibrary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Top" Height="150">
-            <Grid.Background>
-                <ImageBrush ImageSource="https://www.tomswallpapers.com/large/201609/60647.jpg"
+        Title="Public Library" Height="650" Width="650">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Image/60647.jpg"
                             Stretch="UniformToFill">
-                </ImageBrush>
-            </Grid.Background>
-        </Grid>
+            </ImageBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition  Height="*"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
         
-        <Grid DockPanel.Dock="Bottom" Height="100"></Grid>
-        
-        <StackPanel>
-            <TextBox x:Name="InputLogin" HorizontalAlignment="Center" Width="200" Height="30" FontSize="18" VerticalContentAlignment="Center" Margin="10"></TextBox>
-            <PasswordBox x:Name="InputPassword" HorizontalAlignment="Center" Width="200" Height="30" FontSize="18" VerticalContentAlignment="Center" Margin="10"></PasswordBox>
-            <Button Click="Button_Click" HorizontalAlignment="Center" Width="200" Height="30" FontSize="18"  Margin="10">вход</Button>
-        </StackPanel>
-    </DockPanel>
+        <Frame x:Name="MainFrame" VerticalAlignment="Center" Grid.Row="1"/>
+    </Grid>
+
 </Window>

@@ -1,6 +1,4 @@
-﻿using PublicLibrary.lip;
-using PublicLibrary.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,27 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+
+using PublicLibrary.lip;
 
 namespace PublicLibrary
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RegistrationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RegistrationWindow : Window
     {
-        public static string path = @"C:\Temp\MyData.db";
-        public static User user = null;
-
-        private DBcontext db = new DBcontext(path);
-     
-        public MainWindow()
+        private DBcontext db = new DBcontext();
+        public RegistrationWindow()
         {
             InitializeComponent();
-
-            MainFrame.Navigate(new PageAuth());
         }
 
+        private void Registration_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
