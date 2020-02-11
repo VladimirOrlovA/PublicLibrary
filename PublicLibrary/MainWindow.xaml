@@ -15,12 +15,13 @@
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
-            <RowDefinition  Height="*"></RowDefinition>
-            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition  Height="550"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <Frame x:Name="MainFrame" VerticalAlignment="Center" Grid.Row="1"/>
+        <Frame x:Name="MainFrame" VerticalAlignment="Center" Grid.Row="1"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 
 </Window>

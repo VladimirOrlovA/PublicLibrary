@@ -21,7 +21,7 @@ namespace PublicLibrary.Pages
     /// </summary>
     public partial class PageAuth : Page
     {
-        private DBcontext db = new DBcontext(MainWindow.path);
+        private DbContext db = new DbContext(MainWindow.path);
         public PageAuth()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace PublicLibrary.Pages
 
                 if (MainWindow.user != null)
                 {
-
+                    MainWindow._MainFrame.Navigate(new WelcomePage());
                 }
                 else
                 {

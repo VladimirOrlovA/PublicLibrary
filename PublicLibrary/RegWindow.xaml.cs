@@ -20,7 +20,7 @@ namespace PublicLibrary
     /// </summary>
     public partial class RegWindow : Window
     {
-        private DBcontext db = new DBcontext(MainWindow.path);
+        private DbContext db = new DbContext(MainWindow.path);
         public RegWindow()
         {
             InitializeComponent();

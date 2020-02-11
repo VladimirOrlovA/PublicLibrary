@@ -17,14 +17,16 @@
                      VerticalContentAlignment="Center" Margin="10 0 10 0"
                      KeyDown="InputLogin_KeyDown"
                      LostFocus="InputLogin_LostFocus"
-                  FontFamily="Bahnschrift Light Condensed"/>
+                  FontFamily="Bahnschrift Light Condensed"
+                 Text="User"/>
         <Label x:Name="validateInputLogin" HorizontalAlignment="Center"/>
 
         <Label HorizontalAlignment="Center" FontSize="18" Margin="0"
                FontFamily="Bahnschrift Light Condensed">Пароль</Label>
         <PasswordBox x:Name="InputPassword" HorizontalAlignment="Center" 
                          Width="200" Height="30" FontSize="18" 
-                         VerticalContentAlignment="Center" Margin="10 0 10 0"/>
+                         VerticalContentAlignment="Center" Margin="10 0 10 0" 
+                     Password="123"/>
 
         <Button Click="BtnReg_Click" HorizontalAlignment="Center" x:Name="btnReg" 
                 Width="200" Height="30" Margin="10 20 10 0" FontSize="18" 
@@ -32,6 +34,7 @@
 
         <Button Click="Button_Click" HorizontalAlignment="Center" 
                 Width="200" Height="30" FontSize="18"  Margin="10 5 10 0"
-                Content="Войти" FontFamily="Bahnschrift Light Condensed"/>
+                Content="Войти" FontFamily="Bahnschrift Light Condensed"
+                IsDefault="true"/>
     </StackPanel>
 </Page>

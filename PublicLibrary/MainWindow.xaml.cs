@@ -24,13 +24,13 @@ namespace PublicLibrary
     {
         public static string path = @"C:\Temp\MyData.db";
         public static User user = null;
-
-        private DBcontext db = new DBcontext(path);
+        public static Frame _MainFrame = null;
+        private DbContext db = new DbContext(path);
      
         public MainWindow()
         {
             InitializeComponent();
-
+            _MainFrame = MainFrame;
             MainFrame.Navigate(new PageAuth());
         }
 
