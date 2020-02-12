@@ -21,7 +21,7 @@ namespace PublicLibrary
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window 
     {
         //public static string path = @"DB\publicLibraryData.db";
         public static string path = @"C:\Users\vladi\Source\Repos\PublicLibrary\PublicLibrary\DB\publicLibraryData.db";
