@@ -5,18 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PublicLibrary.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="500"
       Title="WelcomePage">
 
-    <Grid Height="450" Margin="5">
+    <Grid Height="450" Margin="5" Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <GroupBox Grid.Row="0" Grid.Column="0" Margin="5" FontSize="26" 
                   FontFamily="Bahnschrift Light Condensed" Header="Доступность">
@@ -31,7 +31,7 @@
         </GroupBox>
         <GroupBox Grid.Row="0" Grid.Column="1" Margin="5" FontSize="26" 
                   FontFamily="Bahnschrift Light Condensed" Header="Настройки">
-            <StackPanel>
+            <StackPanel Margin="10">
                 <CheckBox Content="Лицам старше 18" FontSize="20"
                           x:Name="cbAfter18"></CheckBox>
                 <CheckBox Content="Раритет" FontSize="20"
@@ -51,7 +51,7 @@
                     <RowDefinition Height="auto" ></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Margin="5" Grid.Column="0" Grid.Row="0"
@@ -63,7 +63,7 @@
                        FontSize="15"></Label>
                 <TextBox Margin="5" Grid.Column="1" Grid.Row="0"
                          VerticalAlignment="Center"
-                         FontSize="15"
+                         FontSize="20"
                          FontFamily="Bahnschrift Light Condensed"
                          HorizontalAlignment="Stretch"></TextBox>
                 <Label Margin="5" Grid.Column="0" Grid.Row="1"
@@ -75,7 +75,7 @@
                        FontSize="15"></Label>
                 <TextBox Margin="5" Grid.Column="1" Grid.Row="1"
                          VerticalAlignment="Center"
-                         FontSize="15"
+                         FontSize="20"
                          FontFamily="Bahnschrift Light Condensed"
                          HorizontalAlignment="Stretch"></TextBox>
                 <Label Margin="5" Grid.Column="0" Grid.Row="2"
@@ -120,9 +120,21 @@
                 </TabControl>
             </Grid>
         </Border>
-        <Button VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Grid.Row="3"
-                Grid.Column="1">Добавить книгу</Button>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="10">
+            
+            <Button x:Name="BtnAddBookOk"
+                    Click="BtnAddBookOk_Click"
+                    Margin="10 0"
+                    Padding="5 0">Добавить книгу</Button>
+
+            <Button x:Name="BtnAddBookCancel"
+                    Click="BtnAddBookCancel_Click"
+                    HorizontalAlignment="Center"
+                    Padding="5 0">Отмена</Button>
+        </StackPanel>
     </Grid>
 </Page>

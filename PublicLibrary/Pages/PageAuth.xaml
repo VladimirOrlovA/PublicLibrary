@@ -31,13 +31,15 @@
                      Password="123"/>
         <Label x:Name="LbInputPasswordErrMess" HorizontalAlignment="Center"/>
 
-        <Button Click="BtnReg_Click" HorizontalAlignment="Center" x:Name="btnReg" 
-                Width="200" Height="30" Margin="10 40 10 0" FontSize="18" 
-                Content="Регистрация" FontFamily="Bahnschrift Light Condensed"/>
-
         <Button Click="BtnEnt_Click" HorizontalAlignment="Center" 
-                Width="200" Height="30" FontSize="18"  Margin="10 10 10 10"
+                Width="200" Height="30" FontSize="18"  Margin="10 40 10 10"
                 Content="Войти" FontFamily="Bahnschrift Light Condensed"
                 IsDefault="true"/>
+        
+        <Button Click="BtnReg_Click" HorizontalAlignment="Center" x:Name="btnReg" 
+                Width="200" Height="30" Margin="10 0 10 10" FontSize="18" 
+                Content="Регистрация" FontFamily="Bahnschrift Light Condensed"/>
+
+
     </StackPanel>
 </Page>

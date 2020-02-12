@@ -24,5 +24,15 @@ namespace PublicLibrary.Pages
         {
             InitializeComponent();
         }
+
+        private void BtnAddBookCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAddBookOk_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
