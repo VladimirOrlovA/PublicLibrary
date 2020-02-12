@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicLibrary", "PublicLibrary\PublicLibrary.csproj", "{59D76F85-BD8E-47EC-B7E8-1595073D7B7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicLibrary.lip", "PublicLibrary.lip\PublicLibrary.lip.csproj", "{607DB133-5CA2-4248-B0C6-8CC693FFE704}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicLibrary.lib", "PublicLibrary.lip\PublicLibrary.lib.csproj", "{607DB133-5CA2-4248-B0C6-8CC693FFE704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

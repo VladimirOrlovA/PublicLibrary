@@ -11,29 +11,32 @@
 
         <Label HorizontalAlignment="Center" FontSize="18" Margin="0"
                FontFamily="Bahnschrift Light Condensed" Foreground="White">Логин</Label>
-        <TextBox x:Name="InputLogin" 
+        <TextBox x:Name="TbInputLogin" 
                      HorizontalAlignment="Center" 
                      Width="200" Height="30" FontSize="18" 
                      VerticalContentAlignment="Center" Margin="10 0 10 0"
-                     KeyDown="InputLogin_KeyDown"
-                     LostFocus="InputLogin_LostFocus"
-                  FontFamily="Bahnschrift Light Condensed"
-                 Text="User"/>
-        <Label x:Name="validateInputLogin" HorizontalAlignment="Center"/>
+                     KeyDown="TbInputLogin_KeyDown"
+                     LostFocus="TbInputLogin_LostFocus"
+                     FontFamily="Bahnschrift Light Condensed"
+                     Text="User"/>
+        <Label x:Name="LbInputLoginErrMess" HorizontalAlignment="Center"/>
 
         <Label HorizontalAlignment="Center" FontSize="18" Margin="0"
-               FontFamily="Bahnschrift Light Condensed">Пароль</Label>
-        <PasswordBox x:Name="InputPassword" HorizontalAlignment="Center" 
-                         Width="200" Height="30" FontSize="18" 
-                         VerticalContentAlignment="Center" Margin="10 0 10 0" 
+               FontFamily="Bahnschrift Light Condensed" Foreground="White">Пароль</Label>
+        <PasswordBox x:Name="PbInputPassword" HorizontalAlignment="Center" 
+                     Width="200" Height="30" FontSize="18" 
+                     VerticalContentAlignment="Center" Margin="10 0 10 0"
+                     KeyDown="PbInputPassword_KeyDown"
+                     LostFocus="PbInputPassword_LostFocus"
                      Password="123"/>
+        <Label x:Name="LbInputPasswordErrMess" HorizontalAlignment="Center"/>
 
         <Button Click="BtnReg_Click" HorizontalAlignment="Center" x:Name="btnReg" 
-                Width="200" Height="30" Margin="10 20 10 0" FontSize="18" 
+                Width="200" Height="30" Margin="10 40 10 0" FontSize="18" 
                 Content="Регистрация" FontFamily="Bahnschrift Light Condensed"/>
 
-        <Button Click="Button_Click" HorizontalAlignment="Center" 
-                Width="200" Height="30" FontSize="18"  Margin="10 5 10 0"
+        <Button Click="BtnEnt_Click" HorizontalAlignment="Center" 
+                Width="200" Height="30" FontSize="18"  Margin="10 10 10 10"
                 Content="Войти" FontFamily="Bahnschrift Light Condensed"
                 IsDefault="true"/>
     </StackPanel>

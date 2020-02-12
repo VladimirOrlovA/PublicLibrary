@@ -116,13 +116,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PublicLibrary.lip\PublicLibrary.lip.csproj">
+    <ProjectReference Include="..\PublicLibrary.lip\PublicLibrary.lib.csproj">
       <Project>{607db133-5ca2-4248-b0c6-8cc693ffe704}</Project>
-      <Name>PublicLibrary.lip</Name>
+      <Name>PublicLibrary.lib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\60647.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DB\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

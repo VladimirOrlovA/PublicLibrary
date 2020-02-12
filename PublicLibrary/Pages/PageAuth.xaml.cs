@@ -1,5 +1,4 @@
-﻿using PublicLibrary.lip;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using PublicLibrary.lib;
+
 namespace PublicLibrary.Pages
 {
     /// <summary>
@@ -27,11 +28,11 @@ namespace PublicLibrary.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnEnt_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckInput(InputLogin, validateInputLogin))
+            if (CheckInput("inputVal", "errField"))
             {
-                MainWindow.user = db.GetUser(InputPassword.Password, InputLogin.Text);
+                MainWindow.user = db.GetUser(PbInputPassword.Password, TbInputLogin.Text);
 
                 if (MainWindow.user != null)
                 {
@@ -44,29 +45,51 @@ namespace PublicLibrary.Pages
             }
         }
 
-        private void InputLogin_KeyDown(object sender, KeyEventArgs e)
+        private void TbInputLogin_KeyDown(object sender, KeyEventArgs e)
         {
-            CheckInput(InputLogin, validateInputLogin);
+            string inputStr = TbInputLogin.Text;
+            CheckInput(inputStr, "LbInputLoginErrMess");
         }
 
-        private void InputLogin_LostFocus(object sender, RoutedEventArgs e)
+        private void TbInputLogin_LostFocus(object sender, RoutedEventArgs e)
         {
-            CheckInput(InputLogin, validateInputLogin);
+            string inputStr = TbInputLogin.Text;
+            CheckInput(inputStr, "LbInputLoginErrMess");
         }
 
-        private bool CheckInput(TextBox input, Label validLable)
+
+        private void PbInputPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(input.Text))
+            string inputStr = PbInputPassword.Password;
+            CheckInput(inputStr, "LbInputPasswordErrMess");
+        }
+
+        private void PbInputPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string inputStr = PbInputPassword.Password;
+            CheckInput(inputStr, "LbInputPasswordErrMess");
+        }
+
+        private bool CheckInput(string inputVal, string errField)
+        {
+            if (string.IsNullOrWhiteSpace(inputVal) && errField == "LbInputLoginErrMess")
             {
-                validLable.Content = "Поля обязательное для заполнения!";
-                validLable.Foreground = new SolidColorBrush(Colors.Red);
+                LbInputLoginErrMess.Content = "Поле обязательное для заполнения!";
+                LbInputLoginErrMess.Foreground = new SolidColorBrush(Colors.Red);
+                TbInputLogin.BorderBrush = Brushes.Red;
                 return false;
             }
-            else
+
+            if (string.IsNullOrWhiteSpace(inputVal) && errField == "LbInputPasswordErrMess")
             {
-                validLable.Content = "";
-                return true;
+                LbInputPasswordErrMess.Content = "Поле обязательное для заполнения!";
+                LbInputPasswordErrMess.Foreground = new SolidColorBrush(Colors.Red);
+                PbInputPassword.BorderBrush = Brushes.Red;
+                return false;
             }
+
+            LbInputLoginErrMess.Content = LbInputPasswordErrMess.Content = "";
+            return true;
         }
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
