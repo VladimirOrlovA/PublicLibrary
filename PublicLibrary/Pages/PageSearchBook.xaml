@@ -9,6 +9,6 @@
       Title="PageSearchBook">
 
     <Grid>
-        
+        <Label x:Name="LbBooks"/>
     </Grid>
 </Page>
