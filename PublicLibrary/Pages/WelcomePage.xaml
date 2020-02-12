@@ -33,11 +33,11 @@
                   FontFamily="Bahnschrift Light Condensed" Header="Настройки">
             <StackPanel Margin="10">
                 <CheckBox Content="Лицам старше 18" FontSize="20"
-                          x:Name="cbAfter18"></CheckBox>
+                          x:Name="CbAfter18"></CheckBox>
                 <CheckBox Content="Раритет" FontSize="20"
-                          x:Name="cbOld"></CheckBox>
+                          x:Name="CbOld"></CheckBox>
                 <CheckBox Content="Последнее издание" FontSize="20"
-                          x:Name="cbLastBook"></CheckBox>
+                          x:Name="CbLastBook"></CheckBox>
             </StackPanel>
         </GroupBox>
         <Border Grid.Column="0" Grid.Row="1" Margin="5" Grid.ColumnSpan="2">
@@ -61,7 +61,7 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="15"></Label>
-                <TextBox Margin="5" Grid.Column="1" Grid.Row="0"
+                <TextBox x:Name="TbBookName" Margin="5" Grid.Column="1" Grid.Row="0"
                          VerticalAlignment="Center"
                          FontSize="20"
                          FontFamily="Bahnschrift Light Condensed"
@@ -73,7 +73,7 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="15"></Label>
-                <TextBox Margin="5" Grid.Column="1" Grid.Row="1"
+                <TextBox x:Name="TbBookAuthor" Margin="5" Grid.Column="1" Grid.Row="1"
                          VerticalAlignment="Center"
                          FontSize="20"
                          FontFamily="Bahnschrift Light Condensed"
@@ -85,7 +85,7 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="15"></Label>
-                <DatePicker Margin="5" Grid.Column="1" Grid.Row="2"
+                <DatePicker x:Name="DpBookCreatedDate" Margin="5" Grid.Column="1" Grid.Row="2"
                          VerticalAlignment="Center"
                          FontSize="15"
                          FontFamily="Bahnschrift Light Condensed"
@@ -104,12 +104,12 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="15"></Label>
-                <ComboBox Margin="5" Grid.Column="1" Grid.Row="3"
+                <ComboBox x:Name="CbBookEdition" Margin="5" Grid.Column="1" Grid.Row="3"
                          VerticalAlignment="Center"
                          FontSize="15"
                          FontFamily="Bahnschrift Light Condensed"
                          HorizontalAlignment="Stretch"></ComboBox>
-                <ComboBox Margin="5" Grid.Column="1" Grid.Row="4"
+                <ComboBox x:Name="CbBookGenre" Margin="5" Grid.Column="1" Grid.Row="4"
                          VerticalAlignment="Center"
                          FontSize="15"
                          FontFamily="Bahnschrift Light Condensed"

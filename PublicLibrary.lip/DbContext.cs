@@ -1,9 +1,10 @@
-﻿using LiteDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using LiteDB;
 
 namespace PublicLibrary.lib
 {
@@ -56,6 +57,34 @@ namespace PublicLibrary.lib
             {
                 Console.WriteLine(ex);
                 return false;
+            }
+        }
+
+        public bool AddBook(Book book)
+        {
+            try
+            {
+                using(var db=new LiteDatabase(Path))
+                {
+                    var books = db.GetCollection<Book>("Book");
+                    books.Insert(book);
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public List<Book> GetBooks()
+        {
+            List<Book> books = null;
+
+            using (var db = new LiteDatabase(Path))
+            {
+                books = db.GetCollection<Book>("Book").FindAll().ToList();
+                return books;
             }
         }
     }
