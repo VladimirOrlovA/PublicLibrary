@@ -46,10 +46,16 @@ namespace PublicLibrary.Pages
         private void BtnDelBook_Click(object sender, RoutedEventArgs e)
         {
             DbContext db = new DbContext(MainWindow.path);
-            if (db.DelBooks())
-                MessageBox.Show("Все книги удалены");
-            else MessageBox.Show("Что-то пошло не так");
-        }
 
+            int errMesCode = db.ClearTable("Book", out errMesCode);
+
+            switch (errMesCode)
+            {
+                case 0: { MessageBox.Show("Нет доступа к БД"); } break;
+                case 1: { MessageBox.Show("Повреждена БД"); } break;
+                case 2: { MessageBox.Show("Все книги удалены"); } break;
+                case 3: { MessageBox.Show("Удалять нечего"); } break;
+            }
+        }
     }
 }

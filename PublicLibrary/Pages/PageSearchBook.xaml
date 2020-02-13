@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PublicLibrary.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="500"
+      d:DesignHeight="420" d:DesignWidth="500"
       Title="PageSearchBook">
 
     <Border Margin="10" Background="White">
@@ -26,11 +26,18 @@
             </GroupBox>
 
             <GroupBox Header="Результаты поиска" Grid.Row="1">
-                <ListBox x:Name="ListFoundBooks">
-                </ListBox>
+                <ListBox x:Name="ListFoundBooks"></ListBox>
             </GroupBox>
 
-            <Label x:Name="LbBooks"/>
+            <StackPanel Grid.Row="2" 
+                        HorizontalAlignment="Right"
+                        Margin="10">
+                <Button x:Name="BtnBackMainMenu"
+                        Click="BtnBackMainMenu_Click"
+                        Width="70"
+                        Content="Назад"></Button>
+                        
+            </StackPanel>
         </Grid>
     </Border>
 </Page>

@@ -64,14 +64,14 @@ namespace PublicLibrary.lib
         {
             try
             {
-                using(var db=new LiteDatabase(Path))
+                using (var db = new LiteDatabase(Path))
                 {
                     var books = db.GetCollection<Book>("Book");
                     books.Insert(book);
                     return true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
@@ -88,19 +88,24 @@ namespace PublicLibrary.lib
             }
         }
 
-        public bool DelBooks()
+        public int ClearTable(string tableName, out int errMesCode)
         {
             try
             {
-                using (var dp = new LiteDatabase(Path))
+                using (var ldb = new LiteDatabase(Path))
                 {
-                    dp.DropCollection("Book");
+                    // таблица БД пустая - errMesCode = 3
+                    if (!ldb.CollectionExists(tableName)) return errMesCode = 3;
+                    // БД повреждена - errMesCode = 1
+                    if (!ldb.DropCollection(tableName)) return errMesCode = 1;
                 }
-                return true;
+                // данные из таблицы удалены - errMesCode = 2
+                return errMesCode = 2;
             }
             catch
             {
-                return false;
+                // ошибка доступа к БД - errMesCode = 0
+                return errMesCode = 0;
             }
         }
     }

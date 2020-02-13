@@ -49,5 +49,10 @@ namespace PublicLibrary.Pages
         {
 
         }
+
+        private void BtnBackMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow._MainFrame.Navigate(new PageMainMenu());
+        }
     }
 }

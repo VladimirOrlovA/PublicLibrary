@@ -135,6 +135,11 @@
                     Click="BtnAddBookCancel_Click"
                     HorizontalAlignment="Center"
                     Padding="5 0">Отмена</Button>
+            <Button x:Name="BtnBackMainMenu"
+                    Click="BtnBackMainMenu_Click"
+                    HorizontalAlignment="Center"
+                    Padding="5 0"
+                    Margin ="10 0">Назад</Button>
         </StackPanel>
     </Grid>
 </Page>

@@ -27,11 +27,6 @@ namespace PublicLibrary.Pages
             InitializeComponent();
         }
 
-        private void BtnAddBookCancel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BtnAddBookOk_Click(object sender, RoutedEventArgs e)
         {
             Book book = new Book();
@@ -58,5 +53,18 @@ namespace PublicLibrary.Pages
 
 
         }
+
+
+        private void BtnAddBookCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private void BtnBackMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow._MainFrame.Navigate(new PageMainMenu());
+        }
+        
     }
 }
