@@ -87,5 +87,21 @@ namespace PublicLibrary.lib
                 return books;
             }
         }
+
+        public bool DelBooks()
+        {
+            try
+            {
+                using (var dp = new LiteDatabase(Path))
+                {
+                    dp.DropCollection("Book");
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace PublicLibrary.Pages
     /// <summary>
     /// Логика взаимодействия для WelcomePage.xaml
     /// </summary>
-    public partial class WelcomePage : Page
+    public partial class PageAddBook : Page
     {
-        public WelcomePage()
+        public PageAddBook()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace PublicLibrary.Pages
             book.Name = TbBookName.Text;
             book.Edition = CbBookEdition.SelectedValue == null ? "не указан" : CbBookEdition.Text;
             book.CreatedDate = DpBookCreatedDate.SelectedDate != null ? (DateTime)DpBookCreatedDate.SelectedDate : DateTime.Now;
-            book.Autor = TbBookAuthor.Text;
+            book.Author = TbBookAuthor.Text;
             book.Genre = CbBookGenre.SelectedValue == null ? "нет" : CbBookGenre.SelectedValue.ToString();
             book.IsAvailable = (bool)rbAvailable.IsChecked;
             book.IsEighteenPlus = (bool)CbAfter18.IsChecked;

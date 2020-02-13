@@ -36,7 +36,7 @@ namespace PublicLibrary.Pages
 
                 if (MainWindow.user != null)
                 {
-                    MainWindow._MainFrame.Navigate(new WelcomePage());
+                    MainWindow._MainFrame.Navigate(new PageMainMenu());
                 }
                 else
                 {

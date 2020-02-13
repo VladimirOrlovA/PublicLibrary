@@ -32,17 +32,22 @@ namespace PublicLibrary.Pages
 
             foreach (Book book in books)
             {
-                StackPanel sp = new StackPanel();
-                Label lb1 = new Label() { Width = 400, Content = book.Name };
-                Label lb2 = new Label() { Width = 180, Content = book.Edition };
-                Label lb3 = new Label() { Width = 180, Content = book.Autor };
+                WrapPanel wp = new WrapPanel();
+                Label lb1 = new Label() { Width = 150, Content = book.Name };
+                Label lb2 = new Label() { Width = 100, Content = book.Author };
+                Label lb3 = new Label() { Width = 100, Content = book.CreatedDate };
 
-                sp.Children.Add(lb1);
-                sp.Children.Add(lb2);
-                sp.Children.Add(lb3);
+                wp.Children.Add(lb1);
+                wp.Children.Add(lb2);
+                wp.Children.Add(lb3);
 
-                LbBooks.Items.Add(sp);
+                ListFoundBooks.Items.Add(wp);
             }
+        }
+
+        private void BtnBookSearch_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

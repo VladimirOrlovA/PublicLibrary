@@ -12,7 +12,7 @@ namespace PublicLibrary.lib
         public string Name { get; set; }
         public string Edition { get; set; }
         public  DateTime  CreatedDate{ get; set; }
-        public string Autor { get; set; }
+        public string Author { get; set; }
         public string Genre { get; set; }
         public bool IsAvailable { get; set; }
         public bool IsEighteenPlus { get; set; }
