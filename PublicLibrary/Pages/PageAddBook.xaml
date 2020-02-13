@@ -8,7 +8,7 @@
       d:DesignHeight="500" d:DesignWidth="500"
       Title="WelcomePage">
 
-    <Grid Height="450" Margin="5" Background="White"> 
+    <Grid Height="450" Margin="5" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.4*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -108,12 +108,21 @@
                          VerticalAlignment="Center"
                          FontSize="15"
                          FontFamily="Bahnschrift Light Condensed"
-                         HorizontalAlignment="Stretch"></ComboBox>
+                         HorizontalAlignment="Stretch">
+                    <ComboBoxItem>Учебное</ComboBoxItem>
+                    <ComboBoxItem>Справочное</ComboBoxItem>
+                    <ComboBoxItem>Практическое</ComboBoxItem>
+                </ComboBox>
                 <ComboBox x:Name="CbBookGenre" Margin="5" Grid.Column="1" Grid.Row="4"
                          VerticalAlignment="Center"
                          FontSize="15"
                          FontFamily="Bahnschrift Light Condensed"
-                         HorizontalAlignment="Stretch"></ComboBox>
+                         HorizontalAlignment="Stretch">
+
+                    <ComboBoxItem>Програмирование</ComboBoxItem>
+                    <ComboBoxItem>Электроника</ComboBoxItem>
+                    <ComboBoxItem>Иностранный язык</ComboBoxItem>
+                </ComboBox>
                 <TabControl Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
                     <TabItem Header="Карточка книги"></TabItem>
                     <TabItem Header="Доступ библиотекаря" IsEnabled="False"></TabItem>
@@ -125,7 +134,7 @@
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
                     Margin="10">
-            
+
             <Button x:Name="BtnAddBookOk"
                     Click="BtnAddBookOk_Click"
                     Margin="10 0"

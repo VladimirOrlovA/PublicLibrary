@@ -47,7 +47,7 @@ namespace PublicLibrary.Pages
         {
             DbContext db = new DbContext(MainWindow.path);
 
-            int errMesCode = db.ClearTable("Book", out errMesCode);
+            int errMesCode = db.ClearTable("Nothing", out errMesCode);
 
             switch (errMesCode)
             {

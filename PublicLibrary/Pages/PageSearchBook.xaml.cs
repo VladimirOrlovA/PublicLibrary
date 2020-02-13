@@ -33,9 +33,9 @@ namespace PublicLibrary.Pages
             foreach (Book book in books)
             {
                 WrapPanel wp = new WrapPanel();
-                Label lb1 = new Label() { Width = 150, Content = book.Name };
-                Label lb2 = new Label() { Width = 100, Content = book.Author };
-                Label lb3 = new Label() { Width = 100, Content = book.CreatedDate };
+                Label lb1 = new Label() { Width = 300, Content = book.Name };
+                Label lb2 = new Label() { Width = 150, Content = book.Author };
+                Label lb3 = new Label() { Width = 150, Content = book.CreatedDate };
 
                 wp.Children.Add(lb1);
                 wp.Children.Add(lb2);

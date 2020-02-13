@@ -88,6 +88,18 @@ namespace PublicLibrary.lib
             }
         }
 
+        public Book GetBookById(int id)
+        {
+            Book book = new Book();
+
+            using(var ldb = new LiteDatabase(Path))
+            {
+                book = ldb.GetCollection<Book>("Book").FindById(id);
+            }
+
+            return book;
+        }
+
         public int ClearTable(string tableName, out int errMesCode)
         {
             try
