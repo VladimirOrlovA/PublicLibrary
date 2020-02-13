@@ -22,9 +22,63 @@ namespace PublicLibrary.Pages
     /// </summary>
     public partial class PageAddBook : Page
     {
-        public PageAddBook()
+        DbContext dbContext = new DbContext(MainWindow.path);
+        Book _book = null;
+        public PageAddBook(Book book)
         {
             InitializeComponent();
+
+            if (book != null)
+            {
+                _book = book;
+                BtnAddBookOk.Content = "Редактировать";
+                BtnAddBookOk.Click += EditBook_Click;
+                BtnAddBookOk.Click -= BtnAddBookOk_Click;
+
+                TbBookName.Text = book.Name;
+                CbBookEdition.SelectedValue = book.Edition;
+                DpBookCreatedDate.SelectedDate = book.CreatedDate;
+                TbBookAuthor.Text = book.Author;
+                CbBookGenre.SelectedValue = book.Genre;
+                rbAvailable.IsChecked = book.IsAvailable;
+                CbAfter18.IsChecked = book.IsEighteenPlus;
+                CbOld.IsChecked = book.IsRaritet;
+                CbLastBook.IsChecked = book.IsLastBook;
+                MainWindow.user.Id = book.AddedBy;
+                // = book.AddedTime;
+            }
+            else
+            {
+                BtnAddBookOk.Content = "Добавить книгу";
+                BtnAddBookOk.Click -= EditBook_Click;
+                BtnAddBookOk.Click += BtnAddBookOk_Click;
+            }
+        }
+
+        private void EditBook_Click(object sender, RoutedEventArgs e)
+        {
+            _book.Name = TbBookName.Text;
+            _book.Edition = CbBookEdition.SelectedValue == null ? "не указан" : CbBookEdition.Text;
+            _book.CreatedDate = DpBookCreatedDate.SelectedDate != null ? (DateTime)DpBookCreatedDate.SelectedDate : DateTime.Now;
+            _book.Author = TbBookAuthor.Text;
+            _book.Genre = CbBookGenre.SelectedValue == null ? "нет" : CbBookGenre.SelectedValue.ToString();
+            _book.IsAvailable = (bool)rbAvailable.IsChecked;
+            _book.IsEighteenPlus = (bool)CbAfter18.IsChecked;
+            _book.IsRaritet = (bool)CbOld.IsChecked;
+            _book.IsLastBook = (bool)CbLastBook.IsChecked;
+            _book.AddedBy = MainWindow.user.Id;
+            _book.AddedTime = DateTime.Now;
+
+            if (dbContext.EditBook(_book))
+            {
+                MessageBox.Show("Книга изменена успешно!");
+                MainWindow._MainFrame.Navigate(new PageMainMenu());
+            }
+            else
+            {
+                MessageBox.Show("Возникли ошибки при изменении книги!");
+            }
+
         }
 
         private void BtnAddBookOk_Click(object sender, RoutedEventArgs e)
@@ -65,6 +119,6 @@ namespace PublicLibrary.Pages
         {
             MainWindow._MainFrame.Navigate(new PageMainMenu());
         }
-        
+
     }
 }

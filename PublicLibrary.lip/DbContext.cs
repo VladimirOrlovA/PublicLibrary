@@ -100,6 +100,16 @@ namespace PublicLibrary.lib
             return book;
         }
 
+        public bool EditBook(Book book)
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                var books = db.GetCollection<Book>("Book");
+                books.Update(book);
+            }
+            return true;
+        }
+
         public int ClearTable(string tableName, out int errMesCode)
         {
             try

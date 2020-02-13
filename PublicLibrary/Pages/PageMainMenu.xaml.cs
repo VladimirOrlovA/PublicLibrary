@@ -35,7 +35,7 @@ namespace PublicLibrary.Pages
 
         private void BtnBookAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow._MainFrame.Navigate(new PageAddBook());
+            MainWindow._MainFrame.Navigate(new PageAddBook(null));
         }
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)

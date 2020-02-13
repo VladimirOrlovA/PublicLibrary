@@ -26,7 +26,8 @@
             </GroupBox>
 
             <GroupBox Header="Результаты поиска" Grid.Row="1">
-                <ListBox x:Name="ListFoundBooks"></ListBox>
+                <ListBox x:Name="ListFoundBooks"
+                         MouseDoubleClick="ListFoundBooks_MouseDoubleClick"></ListBox>
             </GroupBox>
 
             <StackPanel Grid.Row="2" 

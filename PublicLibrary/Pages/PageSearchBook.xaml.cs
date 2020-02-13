@@ -33,9 +33,10 @@ namespace PublicLibrary.Pages
             foreach (Book book in books)
             {
                 WrapPanel wp = new WrapPanel();
-                Label lb1 = new Label() { Width = 300, Content = book.Name };
-                Label lb2 = new Label() { Width = 150, Content = book.Author };
-                Label lb3 = new Label() { Width = 150, Content = book.CreatedDate };
+                Label lb1 = new Label() { Width = 30, Content = book.Id };
+                Label lb2 = new Label() { Width = 300, Content = book.Name };
+                Label lb3 = new Label() { Width = 150, Content = book.Author };
+                Label lb4 = new Label() { Width = 150, Content = book.CreatedDate };
 
                 wp.Children.Add(lb1);
                 wp.Children.Add(lb2);
@@ -53,6 +54,25 @@ namespace PublicLibrary.Pages
         private void BtnBackMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainWindow._MainFrame.Navigate(new PageMainMenu());
+        }
+
+        private void ListFoundBooks_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            StackPanel sp = ((ListBox)sender).SelectedItem as StackPanel;
+
+            int id = Convert.ToInt32(((Label)sp.Children[0]).Content);
+
+            DbContext db = new DbContext(MainWindow.path);
+
+            Book book = db.GetBookById(id);
+            if (book != null)
+            {
+                MainWindow._MainFrame.Navigate(new PageAddBook(book));
+            }
+            else
+            {
+                MessageBox.Show("Что-то пошло не так :)");
+            }
         }
     }
 }
