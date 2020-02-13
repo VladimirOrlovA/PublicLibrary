@@ -26,7 +26,7 @@ namespace PublicLibrary.Pages
         {
             InitializeComponent();
 
-            DbContext db = new DbContext(MainWindow.path);
+            DbContext db = new DbContext(MainWindow.path); 
 
             var books = db.GetBooks();
 
