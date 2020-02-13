@@ -17,7 +17,7 @@ using PublicLibrary.lib;
 
 namespace PublicLibrary.Pages
 {
-    /// <summary>
+    /// <summary> 
     /// Логика взаимодействия для PageSearchBook.xaml
     /// </summary>
     public partial class PageSearchBook : Page
